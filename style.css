@@ -1,0 +1,230 @@
+:root {
+    --primary-color: #2b4356;    /* เปลี่ยนเป็นสีน้ำเงินเข้ม */
+    --accent-color: #3498db;     /* สีฟ้าสดใส */
+    --bg-color: #f5f9fc;         /* พื้นหลังสีฟ้าอ่อนมาก */
+    --text-color: #1f2c3f;       /* สีข้อความโทนน้ำเงิน */
+    --secondary-color: #e8f1f8;  /* สีรองโทนฟ้าอ่อน */
+    --footer-bg: #1e3040;        /* พื้นหลัง footer สีน้ำเงินเข้ม */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 0 5%;
+    background: rgba(255, 255, 255, 0.95);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    height: 64px; /* กำหนดความสูงคงที่ */
+}
+
+.logo {
+    position: relative;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 48px; /* เพิ่มขนาดโลโก้ */
+    width: auto;
+    transform: scale(1.2); /* ขยายโลโก้เพิ่มอีก 20% */
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.25); /* เพิ่ม hover effect */
+}
+
+.nav-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 2rem;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+nav a:hover {
+    color: var(--accent-color);
+}
+
+main {
+    padding: 80px 10% 40px;
+}
+
+section {
+    margin: 4rem 0;
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.lang-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+.lang-card {
+    padding: 2rem;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(52, 152, 219, 0.1);
+    box-shadow: 0 4px 15px rgba(52, 152, 219, 0.05);
+    transition: all 0.3s ease;
+}
+
+.lang-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.1);
+}
+
+.lang-card i {
+    font-size: 2.5rem;
+    color: #3498db;
+    margin-bottom: 1rem;
+}
+
+footer {
+    text-align: center;
+    padding: 4rem 5% 2rem;
+    background: var(--footer-bg);
+    color: white;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 3rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h4 {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.footer-section p i {
+    margin-right: 8px;
+    color: var(--accent-color);
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.social-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background: rgba(52, 152, 219, 0.1);
+    transition: background 0.3s;
+}
+
+.social-link:hover {
+    background: #3498db;
+}
+
+.social-link i {
+    font-size: 1.2rem;
+}
+
+.footer-bottom {
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    text-align: center;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: white;
+    min-width: 200px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+    animation: fadeIn 0.3s ease;
+}
+
+.dropdown-content li {
+    list-style: none;
+}
+
+.dropdown-content a {
+    padding: 12px 20px;
+    display: block;
+    color: var(--text-color);
+    transition: all 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: var(--secondary-color);
+    color: var(--accent-color);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
